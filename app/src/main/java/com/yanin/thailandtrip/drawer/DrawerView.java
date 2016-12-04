@@ -34,20 +34,13 @@ public class DrawerView implements DrawerContract.View{
 
     private NavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener =
             item -> {
-                // Handle navigation view item clicks here.
                 int id = item.getItemId();
 
-                if (id == R.id.nav_camera) {
-                    // Handle the camera action
+                if (id == R.id.nav_calendar) {
+
                 } else if (id == R.id.nav_gallery) {
 
-                } else if (id == R.id.nav_slideshow) {
-
-                } else if (id == R.id.nav_manage) {
-
-                } else if (id == R.id.nav_share) {
-
-                } else if (id == R.id.nav_send) {
+                } else if (id == R.id.nav_map) {
 
                 }
 
