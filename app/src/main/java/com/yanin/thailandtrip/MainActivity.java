@@ -1,6 +1,9 @@
 package com.yanin.thailandtrip;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 
@@ -12,6 +15,8 @@ public class MainActivity extends BaseActivity implements MainContract.View{
 
     private DrawerContract.View drawerView;
     private DrawerContract.Presenter drawerPresenter;
+    private FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,17 @@ public class MainActivity extends BaseActivity implements MainContract.View{
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerView = new DrawerView(drawer, toolbar, this);
         drawerPresenter = new DrawerPresenter(drawerView, this);
+        fragmentManager = getSupportFragmentManager();
+        showPage();
+    }
+
+    public void showPage() {
+        Fragment newFragment = CalendarFragment.newInstance();
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.layoutContainer, newFragment);
+        transaction.commit();
     }
 
     @Override

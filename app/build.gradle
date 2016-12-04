@@ -43,6 +43,8 @@ greendao {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    //views
+    compile 'com.github.alamkanak:android-week-view:1.2.6'
     //db
     compile "org.greenrobot:greendao:3.2.0"
     //Rx

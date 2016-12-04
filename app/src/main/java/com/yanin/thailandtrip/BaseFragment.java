@@ -1,6 +1,6 @@
 package com.yanin.thailandtrip;
 
-import com.trello.rxlifecycle2.components.RxActivity;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 
-public class BaseFragment extends RxActivity{
+public class BaseFragment extends RxFragment{
 }
