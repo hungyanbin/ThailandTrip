@@ -1,23 +1,28 @@
 package com.yanin.thailandtrip;
 
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alamkanak.weekview.MonthLoader;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 
 import java.util.Collections;
 import java.util.List;
 
+import io.reactivex.Observable;
+
 public class CalendarFragment extends BaseFragment{
 
     private WeekView weekView;
+    private List<WeekViewEvent> weekViewEvents;
+    private static final String TAG = "CalendarFragment";
+    private static final int TRIP_YEAR = 2016;
+    private static final int TRIP_MONTH = 12;
 
     public static CalendarFragment newInstance() {
 
@@ -45,18 +50,30 @@ public class CalendarFragment extends BaseFragment{
     private void setWeekView(View view) {
         weekView = (WeekView) view.findViewById(R.id.weekView);
 
-        weekView.setOnEventClickListener(new WeekView.EventClickListener() {
-            @Override
-            public void onEventClick(WeekViewEvent event, RectF eventRect) {
+        weekView.setOnEventClickListener((event, eventRect) -> {
 
+        });
+        weekView.setMonthChangeListener((newYear, newMonth) -> {
+            if(weekViewEvents == null){
+                loadSchedules();
+            }
+
+            if(newYear == TRIP_YEAR && newMonth == TRIP_MONTH) {
+                return weekViewEvents;
+            }else{
+                return Collections.emptyList();
             }
         });
-        weekView.setMonthChangeListener(new MonthLoader.MonthChangeListener() {
-            @Override
-            public List<? extends WeekViewEvent> onMonthChange(int newYear, int newMonth) {
-                return Collections.EMPTY_LIST;
-            }
-        });
+    }
+
+    private void loadSchedules(){
+        ScheduleFactory scheduleFactory = new ScheduleFactory();
+        WeekViewEventConverter converter = new WeekViewEventConverter();
+        Observable.just(scheduleFactory.getAllSchedules())
+                .flatMap(Observable::fromIterable)
+                .map(converter::convert)
+                .toList()
+                .subscribe(events -> weekViewEvents = events, throwable -> Log.e(TAG, "", throwable));
     }
 
     @Override
