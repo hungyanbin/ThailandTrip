@@ -51,7 +51,7 @@ public class CalendarFragment extends BaseFragment{
         weekView = (WeekView) view.findViewById(R.id.weekView);
 
         weekView.setOnEventClickListener((event, eventRect) -> {
-
+            pageNavigator.openPage();
         });
         weekView.setMonthChangeListener((newYear, newMonth) -> {
             if(weekViewEvents == null){

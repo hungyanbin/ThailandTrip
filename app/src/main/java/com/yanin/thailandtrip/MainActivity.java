@@ -1,5 +1,6 @@
 package com.yanin.thailandtrip;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,7 @@ import com.yanin.thailandtrip.drawer.DrawerContract;
 import com.yanin.thailandtrip.drawer.DrawerPresenter;
 import com.yanin.thailandtrip.drawer.DrawerView;
 
-public class MainActivity extends BaseActivity implements MainContract.View{
+public class MainActivity extends BaseActivity implements MainContract.View, PageNavigator{
 
     private DrawerContract.View drawerView;
     private DrawerContract.Presenter drawerPresenter;
@@ -49,5 +50,11 @@ public class MainActivity extends BaseActivity implements MainContract.View{
     @Override
     public void close() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void openPage() {
+        Intent intent = new Intent(this, TranslucentBarActivity.class);
+        startActivity(intent);
     }
 }
