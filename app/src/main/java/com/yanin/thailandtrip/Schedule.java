@@ -8,14 +8,20 @@ public class Schedule {
     private String startTime;
     private String endTime;
     private String type;
+    private String latitude;
+    private String longitude;
+    private String note;
 
-    public Schedule(long id, String title, String transport, String startTime, String endTime, String type) {
+    public Schedule(long id, String title, String transport, String startTime, String endTime, String type, String latitude, String longitude, String note) {
         this.id = id;
         this.title = title;
         this.transport = transport;
         this.startTime = startTime;
         this.endTime = endTime;
         this.type = type;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.note = note;
     }
 
     public long getId() {
@@ -42,6 +48,18 @@ public class Schedule {
         return type;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Schedule{");
@@ -51,6 +69,9 @@ public class Schedule {
         sb.append(", startTime='").append(startTime).append('\'');
         sb.append(", endTime='").append(endTime).append('\'');
         sb.append(", type='").append(type).append('\'');
+        sb.append(", latitude='").append(latitude).append('\'');
+        sb.append(", longitude='").append(longitude).append('\'');
+        sb.append(", note='").append(note).append('\'');
         sb.append('}');
         return sb.toString();
     }

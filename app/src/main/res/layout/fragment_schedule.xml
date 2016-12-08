@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/gap_3x"
+        android:paddingTop="@dimen/gap_3x">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gap_3x"
+            android:layout_marginEnd="@dimen/gap_2x"
+            android:contentDescription="@string/schedule_transport"
+            android:src="@drawable/ic_transport" />
+
+        <TextView
+            android:id="@+id/txtTransport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/schedule_itemTextSize"
+            android:text="@string/schedule_transport" />
+    </LinearLayout>
+
+    <View style="@style/Divider_Horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/gap_3x"
+        android:paddingTop="@dimen/gap_3x">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gap_3x"
+            android:layout_marginEnd="@dimen/gap_2x"
+            android:contentDescription="@string/schedule_money"
+            android:src="@drawable/ic_money" />
+
+        <TextView
+            android:id="@+id/txtMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/schedule_itemTextSize"
+            android:text="@string/schedule_money" />
+    </LinearLayout>
+
+    <View style="@style/Divider_Horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/gap_3x"
+        android:paddingTop="@dimen/gap_3x">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gap_3x"
+            android:layout_marginEnd="@dimen/gap_2x"
+            android:contentDescription="@string/schedule_location"
+            android:src="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/schedule_itemTextSize"
+            android:text="@string/schedule_location" />
+    </LinearLayout>
+
+    <View style="@style/Divider_Horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/gap_3x"
+        android:paddingTop="@dimen/gap_3x">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gap_3x"
+            android:layout_marginEnd="@dimen/gap_2x"
+            android:contentDescription="@string/schedule_note"
+            android:src="@drawable/ic_note" />
+
+        <TextView
+            android:id="@+id/txtNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/schedule_itemTextSize"
+            android:text="@string/schedule_note" />
+    </LinearLayout>
+
+</LinearLayout>
