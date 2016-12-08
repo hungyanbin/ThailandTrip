@@ -48,10 +48,12 @@ public class BaseFragment extends RxFragment{
         ActionBar actionBar = activity.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setTitle("");
 
         toolbar.setNavigationIcon(homeIcon);
         toolbar.setTag(homeIcon);
         toolbar.setTitleTextColor(ContextCompat.getColor(getContext(), R.color.white));
+
     }
 
 }

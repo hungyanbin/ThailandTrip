@@ -24,15 +24,20 @@ public class Schedule {
     private String longitude;
     private String location;
     private String note;
+    private String imageUrl;
     private double money;
+    
+
+    @Generated(hash = 729319394)
+    public Schedule() {
+    }
 
 
-
-    @Generated(hash = 1669346119)
+    @Generated(hash = 1485358268)
     public Schedule(long id, @NotNull String title, @NotNull String transport,
             @NotNull String startTime, @NotNull String endTime,
             @NotNull String type, String latitude, String longitude,
-            String location, String note, double money) {
+            String location, String note, String imageUrl, double money) {
         this.id = id;
         this.title = title;
         this.transport = transport;
@@ -43,11 +48,8 @@ public class Schedule {
         this.longitude = longitude;
         this.location = location;
         this.note = note;
+        this.imageUrl = imageUrl;
         this.money = money;
-    }
-
-    @Generated(hash = 729319394)
-    public Schedule() {
     }
 
 
@@ -155,5 +157,13 @@ public class Schedule {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    public String getImageUrl() {
+        return this.imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
