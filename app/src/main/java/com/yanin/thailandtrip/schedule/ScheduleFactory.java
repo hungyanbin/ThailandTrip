@@ -1,4 +1,6 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.schedule;
+
+import com.yanin.thailandtrip.schedule.Schedule;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.yanin.thailandtrip.page.PageFactory;
+import com.yanin.thailandtrip.schedule.ScheduleFactory;
+import com.yanin.thailandtrip.schedule.ScheduleRepo;
 
 import java.util.Collections;
 import java.util.List;
@@ -68,9 +70,10 @@ public class CalendarFragment extends BaseFragment{
     }
 
     private void loadSchedules(){
-        ScheduleFactory scheduleFactory = new ScheduleFactory();
+        ScheduleRepo scheduleRepo = RepoFactory.getScheduleRepo();
         WeekViewEventConverter converter = new WeekViewEventConverter();
-        Observable.just(scheduleFactory.getAllSchedules())
+        scheduleRepo.loadAll()
+                .toObservable()
                 .flatMap(Observable::fromIterable)
                 .map(converter::convert)
                 .toList()

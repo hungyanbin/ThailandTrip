@@ -1,6 +1,7 @@
 package com.yanin.thailandtrip;
 
 import com.alamkanak.weekview.WeekViewEvent;
+import com.yanin.thailandtrip.schedule.Schedule;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

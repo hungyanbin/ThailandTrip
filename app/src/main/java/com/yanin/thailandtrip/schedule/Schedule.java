@@ -1,12 +1,24 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.schedule;
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.NotNull;
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity
 public class Schedule {
 
+    @Id(autoincrement = true)
     private long id;
+    @NotNull
     private String title;
+    @NotNull
     private String transport;
+    @NotNull
     private String startTime;
+    @NotNull
     private String endTime;
+    @NotNull
     private String type;
     private String latitude;
     private String longitude;
@@ -14,8 +26,13 @@ public class Schedule {
     private String note;
     private double money;
 
-    public Schedule(long id, String title, String transport, String startTime, String endTime, String type,
-                    String latitude, String longitude, String location, String note, double money) {
+
+
+    @Generated(hash = 1669346119)
+    public Schedule(long id, @NotNull String title, @NotNull String transport,
+            @NotNull String startTime, @NotNull String endTime,
+            @NotNull String type, String latitude, String longitude,
+            String location, String note, double money) {
         this.id = id;
         this.title = title;
         this.transport = transport;
@@ -28,6 +45,11 @@ public class Schedule {
         this.note = note;
         this.money = money;
     }
+
+    @Generated(hash = 729319394)
+    public Schedule() {
+    }
+
 
     public long getId() {
         return id;
@@ -81,5 +103,57 @@ public class Schedule {
         sb.append(", money=").append(money);
         sb.append('}');
         return sb.toString();
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setTransport(String transport) {
+        this.transport = transport;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public double getMoney() {
+        return this.money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
     }
 }

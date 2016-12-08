@@ -1,0 +1,44 @@
+package com.yanin.thailandtrip.schedule;
+
+import com.yanin.thailandtrip.ScheduleDao;
+import com.yanin.thailandtrip.ServiceFactory;
+
+import java.util.List;
+
+import io.reactivex.Single;
+
+public class ScheduleRepoImp implements ScheduleRepo{
+
+    private ScheduleDao scheduleDao;
+
+    public ScheduleRepoImp() {
+        scheduleDao = ServiceFactory.getDBService().getScheduleDao();
+    }
+
+    @Override
+    public Single<List<Schedule>> loadAll() {
+        return Single.just(hasItem())
+                .map(this::getItems);
+    }
+
+    private boolean hasItem(){
+        long count = scheduleDao.count();
+        return count != 0;
+    }
+
+    private List<Schedule> getItems(boolean hasItem){
+        if(hasItem){
+            return scheduleDao.loadAll();
+        }else{
+            ScheduleFactory scheduleFactory = new ScheduleFactory();
+            List<Schedule> schedules = scheduleFactory.getAllSchedules();
+            scheduleDao.insertInTx(schedules);
+            return scheduleFactory.getAllSchedules();
+        }
+    }
+
+    @Override
+    public Single<Schedule> getById(long id) {
+        return Single.just(scheduleDao.load(id));
+    }
+}

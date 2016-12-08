@@ -44,7 +44,6 @@ public class ScheduleFragment extends BaseFragment{
         return inflater.inflate(R.layout.fragment_schedule, container, false);
     }
 
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -65,7 +64,6 @@ public class ScheduleFragment extends BaseFragment{
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case android.R.id.home:
-                Log.i("test", "onOptionsItemSelected: home");
                 pageNavigator.toLastPage();
                 return true;
         }
