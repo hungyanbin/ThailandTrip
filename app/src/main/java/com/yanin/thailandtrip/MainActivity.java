@@ -11,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import com.yanin.thailandtrip.drawer.DrawerContract;
 import com.yanin.thailandtrip.drawer.DrawerPresenter;
 import com.yanin.thailandtrip.drawer.DrawerView;
+import com.yanin.thailandtrip.page.Page;
+import com.yanin.thailandtrip.page.PageNavigator;
 
-public class MainActivity extends BaseActivity implements MainContract.View, PageNavigator{
+public class MainActivity extends BaseActivity implements MainContract.View, PageNavigator {
 
     private DrawerContract.View drawerView;
     private DrawerContract.Presenter drawerPresenter;
@@ -53,8 +55,14 @@ public class MainActivity extends BaseActivity implements MainContract.View, Pag
     }
 
     @Override
-    public void openPage() {
+    public void openPage(Page page) {
         Intent intent = new Intent(this, TranslucentBarActivity.class);
+        intent.putExtra(ARG_PAGE, page);
         startActivity(intent);
+    }
+
+    @Override
+    public void toLastPage() {
+        onBackPressed();
     }
 }

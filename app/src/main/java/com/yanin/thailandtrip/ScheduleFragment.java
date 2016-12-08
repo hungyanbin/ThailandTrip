@@ -8,27 +8,34 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.alamkanak.weekview.WeekView;
-import com.alamkanak.weekview.WeekViewEvent;
-
-import java.util.Collections;
-import java.util.List;
-
-import io.reactivex.Observable;
+import android.widget.TextView;
 
 public class ScheduleFragment extends BaseFragment{
 
-    private static final String TAG = "CalendarFragment";
-    private Toolbar toolbar;
+    private final static String ARG_SCHEDULE_ID = "scheduleId";
+    private long scheduleId;
 
-    public static ScheduleFragment newInstance() {
+    private Toolbar toolbar;
+    private TextView txtTransport;
+    private TextView txtMoney;
+    private TextView txtLocation;
+    private TextView txtNote;
+
+    public static ScheduleFragment newInstance(long scheduleId) {
 
         Bundle args = new Bundle();
+        args.putLong(ARG_SCHEDULE_ID, scheduleId);
 
         ScheduleFragment fragment = new ScheduleFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle bundle = getArguments();
+        scheduleId = bundle.getLong(ARG_SCHEDULE_ID);
     }
 
     @Nullable
@@ -48,8 +55,21 @@ public class ScheduleFragment extends BaseFragment{
 
     private void findView() {
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+        txtTransport = (TextView)findViewById(R.id.txtTransport);
+        txtMoney = (TextView)findViewById(R.id.txtMoney);
+        txtLocation = (TextView)findViewById(R.id.txtLocation);
+        txtNote = (TextView)findViewById(R.id.txtNote);
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Log.i("test", "onOptionsItemSelected: home");
+                pageNavigator.toLastPage();
+                return true;
+        }
+        return false;
+    }
 
 }

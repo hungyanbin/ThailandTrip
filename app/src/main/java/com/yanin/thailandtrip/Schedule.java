@@ -10,9 +10,12 @@ public class Schedule {
     private String type;
     private String latitude;
     private String longitude;
+    private String location;
     private String note;
+    private double money;
 
-    public Schedule(long id, String title, String transport, String startTime, String endTime, String type, String latitude, String longitude, String note) {
+    public Schedule(long id, String title, String transport, String startTime, String endTime, String type,
+                    String latitude, String longitude, String location, String note, double money) {
         this.id = id;
         this.title = title;
         this.transport = transport;
@@ -21,7 +24,9 @@ public class Schedule {
         this.type = type;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.location = location;
         this.note = note;
+        this.money = money;
     }
 
     public long getId() {
@@ -71,7 +76,9 @@ public class Schedule {
         sb.append(", type='").append(type).append('\'');
         sb.append(", latitude='").append(latitude).append('\'');
         sb.append(", longitude='").append(longitude).append('\'');
+        sb.append(", location='").append(location).append('\'');
         sb.append(", note='").append(note).append('\'');
+        sb.append(", money=").append(money);
         sb.append('}');
         return sb.toString();
     }

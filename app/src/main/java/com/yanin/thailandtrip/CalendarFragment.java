@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
+import com.yanin.thailandtrip.page.PageFactory;
 
 import java.util.Collections;
 import java.util.List;
@@ -51,7 +52,7 @@ public class CalendarFragment extends BaseFragment{
         weekView = (WeekView) view.findViewById(R.id.weekView);
 
         weekView.setOnEventClickListener((event, eventRect) -> {
-            pageNavigator.openPage();
+            pageNavigator.openPage(new PageFactory.SchedulePage(event.getId()));
         });
         weekView.setMonthChangeListener((newYear, newMonth) -> {
             if(weekViewEvents == null){

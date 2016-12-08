@@ -11,11 +11,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
+import com.yanin.thailandtrip.page.PageNavigator;
 
 public class BaseFragment extends RxFragment{
 
     protected PageNavigator pageNavigator;
     protected View rootView;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public void onAttach(Activity activity) {
