@@ -40,7 +40,7 @@ public class BaseFragment extends RxFragment{
         return rootView.findViewById(id);
     }
 
-    protected void setupToolbar(Toolbar toolbar, String title){
+    protected void setupToolbar(Toolbar toolbar){
         @DrawableRes int homeIcon = R.drawable.ic_back_white;
         BaseActivity activity = (BaseActivity) getActivity();
         activity.setSupportActionBar(toolbar);
@@ -48,12 +48,10 @@ public class BaseFragment extends RxFragment{
         ActionBar actionBar = activity.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setTitle(title);
 
         toolbar.setNavigationIcon(homeIcon);
         toolbar.setTag(homeIcon);
         toolbar.setTitleTextColor(ContextCompat.getColor(getContext(), R.color.white));
-
     }
 
 }

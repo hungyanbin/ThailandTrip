@@ -1,7 +1,7 @@
 package com.yanin.thailandtrip.page;
 
 import com.yanin.thailandtrip.BaseFragment;
-import com.yanin.thailandtrip.ScheduleFragment;
+import com.yanin.thailandtrip.schedule.ScheduleFragment;
 
 import java.io.Serializable;
 

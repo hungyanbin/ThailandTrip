@@ -1,16 +1,18 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.schedule;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ScheduleFragment extends BaseFragment{
+import com.yanin.thailandtrip.BaseFragment;
+import com.yanin.thailandtrip.R;
+
+public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
 
     private final static String ARG_SCHEDULE_ID = "scheduleId";
     private long scheduleId;
@@ -20,6 +22,7 @@ public class ScheduleFragment extends BaseFragment{
     private TextView txtMoney;
     private TextView txtLocation;
     private TextView txtNote;
+    private ScheduleContract.Presenter presenter;
 
     public static ScheduleFragment newInstance(long scheduleId) {
 
@@ -49,7 +52,8 @@ public class ScheduleFragment extends BaseFragment{
         super.onViewCreated(view, savedInstanceState);
 
         findView();
-        setupToolbar(toolbar, "test");
+        setupToolbar(toolbar);
+        presenter = new SchedulePresenter(this);
     }
 
     private void findView() {
@@ -70,4 +74,18 @@ public class ScheduleFragment extends BaseFragment{
         return false;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        presenter.onStart(scheduleId);
+    }
+
+    @Override
+    public void show(Schedule schedule) {
+        toolbar.setTitle(schedule.getTitle());
+        txtTransport.setText(schedule.getTransport());
+        txtMoney.setText(String.valueOf(schedule.getMoney()));
+        txtLocation.setText(schedule.getLocation());
+        txtNote.setText(schedule.getNote());
+    }
 }
