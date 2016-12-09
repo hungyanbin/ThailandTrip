@@ -71,7 +71,7 @@ public class CalendarFragment extends BaseFragment{
 
     private void loadSchedules(){
         ScheduleRepo scheduleRepo = RepoFactory.getScheduleRepo();
-        WeekViewEventConverter converter = new WeekViewEventConverter();
+        WeekViewEventConverter converter = new WeekViewEventConverter(getContext());
         scheduleRepo.loadAll()
                 .toObservable()
                 .flatMap(Observable::fromIterable)

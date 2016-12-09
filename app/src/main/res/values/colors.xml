@@ -7,4 +7,9 @@
     <color name="white">#FFFFFF</color>
     <color name="main_background">#faf7f5</color>
 
+    <color name="color_flight">#f89680</color>
+    <color name="color_paid">#9bce02</color>
+    <color name="color_siteSeeing">#00d0ad</color>
+    <color name="color_sleep">#0794bf</color>
+    <color name="color_shopping">#f76b9d</color>
 </resources>

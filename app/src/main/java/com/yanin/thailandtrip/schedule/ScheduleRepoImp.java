@@ -34,7 +34,7 @@ public class ScheduleRepoImp implements ScheduleRepo{
             ScheduleFactory scheduleFactory = new ScheduleFactory();
             List<Schedule> schedules = scheduleFactory.getAllSchedules();
             scheduleDao.insertInTx(schedules);
-            return scheduleFactory.getAllSchedules();
+            return scheduleDao.loadAll();
         }
     }
 
