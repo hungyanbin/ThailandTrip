@@ -1,4 +1,4 @@
-package com.yanin.thailandtrip.schedule;
+package com.yanin.thailandtrip.db;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
@@ -9,7 +9,7 @@ import org.greenrobot.greendao.annotation.Generated;
 public class Schedule {
 
     @Id(autoincrement = true)
-    private long id;
+    private Long id;
     @NotNull
     private String title;
     @NotNull
@@ -26,15 +26,10 @@ public class Schedule {
     private String note;
     private String imageUrl;
     private double money;
-    
-
-    @Generated(hash = 729319394)
-    public Schedule() {
-    }
 
 
-    @Generated(hash = 1485358268)
-    public Schedule(long id, @NotNull String title, @NotNull String transport,
+    @Generated(hash = 1697869518)
+    public Schedule(Long id, @NotNull String title, @NotNull String transport,
             @NotNull String startTime, @NotNull String endTime,
             @NotNull String type, String latitude, String longitude,
             String location, String note, String imageUrl, double money) {
@@ -52,10 +47,10 @@ public class Schedule {
         this.money = money;
     }
 
-
-    public long getId() {
-        return id;
+    @Generated(hash = 729319394)
+    public Schedule() {
     }
+    
 
     public String getTitle() {
         return title;
@@ -165,5 +160,13 @@ public class Schedule {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

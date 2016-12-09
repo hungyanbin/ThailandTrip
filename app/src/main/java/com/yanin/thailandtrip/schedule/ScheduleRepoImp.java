@@ -1,6 +1,8 @@
 package com.yanin.thailandtrip.schedule;
 
 import com.yanin.thailandtrip.ServiceFactory;
+import com.yanin.thailandtrip.db.Schedule;
+import com.yanin.thailandtrip.db.ScheduleDao;
 
 import java.util.List;
 

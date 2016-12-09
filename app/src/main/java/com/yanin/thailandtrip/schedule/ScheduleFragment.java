@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.yanin.thailandtrip.BaseFragment;
 import com.yanin.thailandtrip.R;
+import com.yanin.thailandtrip.db.Schedule;
 
 public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
 

@@ -1,5 +1,7 @@
 package com.yanin.thailandtrip.schedule;
 
+import com.yanin.thailandtrip.db.Schedule;
+
 import java.util.List;
 
 import io.reactivex.Single;
