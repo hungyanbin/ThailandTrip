@@ -1,122 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="250dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/expandedAppbar"
+            app:collapsedTitleTextAppearance="@style/collapsedAppbar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/imageSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/gap_3x"
-        android:paddingTop="@dimen/gap_3x">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gap_3x"
-            android:layout_marginEnd="@dimen/gap_2x"
-            android:contentDescription="@string/schedule_transport"
-            android:src="@drawable/ic_transport" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtTransport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/schedule_itemTextSize"
-            android:text="@string/schedule_transport" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/gap_3x"
+                android:paddingTop="@dimen/gap_3x">
 
-    <View style="@style/Divider_Horizontal" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/gap_2x"
+                    android:layout_marginStart="@dimen/gap_3x"
+                    android:contentDescription="@string/schedule_transport"
+                    android:src="@drawable/ic_transport" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/gap_3x"
-        android:paddingTop="@dimen/gap_3x">
+                <TextView
+                    android:id="@+id/txtTransport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/schedule_transport"
+                    android:textSize="@dimen/schedule_itemTextSize" />
+            </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gap_3x"
-            android:layout_marginEnd="@dimen/gap_2x"
-            android:contentDescription="@string/schedule_money"
-            android:src="@drawable/ic_money" />
+            <View style="@style/Divider_Horizontal" />
 
-        <TextView
-            android:id="@+id/txtMoney"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/schedule_itemTextSize"
-            android:text="@string/schedule_money" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/gap_3x"
+                android:paddingTop="@dimen/gap_3x">
 
-    <View style="@style/Divider_Horizontal" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/gap_2x"
+                    android:layout_marginStart="@dimen/gap_3x"
+                    android:contentDescription="@string/schedule_money"
+                    android:src="@drawable/ic_money" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/gap_3x"
-        android:paddingTop="@dimen/gap_3x">
+                <TextView
+                    android:id="@+id/txtMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/schedule_money"
+                    android:textSize="@dimen/schedule_itemTextSize" />
+            </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gap_3x"
-            android:layout_marginEnd="@dimen/gap_2x"
-            android:contentDescription="@string/schedule_location"
-            android:src="@drawable/ic_location" />
+            <View style="@style/Divider_Horizontal" />
 
-        <TextView
-            android:id="@+id/txtLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/schedule_itemTextSize"
-            android:text="@string/schedule_location" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/gap_3x"
+                android:paddingTop="@dimen/gap_3x">
 
-    <View style="@style/Divider_Horizontal" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/gap_2x"
+                    android:layout_marginStart="@dimen/gap_3x"
+                    android:contentDescription="@string/schedule_location"
+                    android:src="@drawable/ic_location" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/gap_3x"
-        android:paddingTop="@dimen/gap_3x">
+                <TextView
+                    android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/schedule_location"
+                    android:textSize="@dimen/schedule_itemTextSize" />
+            </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gap_3x"
-            android:layout_marginEnd="@dimen/gap_2x"
-            android:contentDescription="@string/schedule_note"
-            android:src="@drawable/ic_note" />
+            <View style="@style/Divider_Horizontal" />
 
-        <TextView
-            android:id="@+id/txtNote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/schedule_itemTextSize"
-            android:text="@string/schedule_note" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/gap_3x"
+                android:paddingTop="@dimen/gap_3x">
 
-</LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/gap_2x"
+                    android:layout_marginStart="@dimen/gap_3x"
+                    android:contentDescription="@string/schedule_note"
+                    android:src="@drawable/ic_note" />
+
+                <TextView
+                    android:id="@+id/txtNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/schedule_note"
+                    android:textSize="@dimen/schedule_itemTextSize" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

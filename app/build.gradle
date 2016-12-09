@@ -55,6 +55,9 @@ dependencies {
     //android support
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
+    //glide
+    compile "com.squareup.okhttp3:okhttp:3.4.1"
+    compile "com.github.bumptech.glide:okhttp-integration:1.4.0"
     //test
     testCompile 'junit:junit:4.12'
 }

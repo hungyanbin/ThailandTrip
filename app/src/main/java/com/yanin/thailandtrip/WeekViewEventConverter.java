@@ -32,8 +32,16 @@ public class WeekViewEventConverter {
             throw new IllegalArgumentException("unexpected format : " + schedule);
         }
 
-        int colorRes = 0;
         String type = schedule.getType();
+
+        WeekViewEvent weekViewEvent = new WeekViewEvent(schedule.getId(), schedule.getTitle(), calendarStart, calendarEnd);
+        weekViewEvent.setColor(getColorByScheduleType(type));
+        return weekViewEvent;
+    }
+
+    public int getColorByScheduleType(String type){
+        int colorRes = 0;
+
         if(type.equals(ScheduleConstants.TYPE_FLIGHT)){
             colorRes = R.color.color_flight;
         }else if(type.equals(ScheduleConstants.TYPE_PAID)){
@@ -45,9 +53,6 @@ public class WeekViewEventConverter {
         }else if(type.equals(ScheduleConstants.TYPE_SLEEP)){
             colorRes = R.color.color_sleep;
         }
-
-        WeekViewEvent weekViewEvent = new WeekViewEvent(schedule.getId(), schedule.getTitle(), calendarStart, calendarEnd);
-        weekViewEvent.setColor(ContextCompat.getColor(context, colorRes));
-        return weekViewEvent;
+        return ContextCompat.getColor(context, colorRes);
     }
 }

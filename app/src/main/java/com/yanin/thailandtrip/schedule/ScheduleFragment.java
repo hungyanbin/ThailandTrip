@@ -2,15 +2,20 @@ package com.yanin.thailandtrip.schedule;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.yanin.thailandtrip.BaseFragment;
 import com.yanin.thailandtrip.R;
+import com.yanin.thailandtrip.WeekViewEventConverter;
 import com.yanin.thailandtrip.db.Schedule;
 
 public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
@@ -18,11 +23,13 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     private final static String ARG_SCHEDULE_ID = "scheduleId";
     private long scheduleId;
 
+    private CollapsingToolbarLayout collapsingToolbarLayout;
     private Toolbar toolbar;
     private TextView txtTransport;
     private TextView txtMoney;
     private TextView txtLocation;
     private TextView txtNote;
+    private ImageView imageSchedule;
     private ScheduleContract.Presenter presenter;
 
     public static ScheduleFragment newInstance(long scheduleId) {
@@ -58,11 +65,13 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     }
 
     private void findView() {
+        collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsingToolbarLayout);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         txtTransport = (TextView)findViewById(R.id.txtTransport);
         txtMoney = (TextView)findViewById(R.id.txtMoney);
         txtLocation = (TextView)findViewById(R.id.txtLocation);
         txtNote = (TextView)findViewById(R.id.txtNote);
+        imageSchedule = (ImageView)findViewById(R.id.imageSchedule);
     }
 
     @Override
@@ -83,10 +92,17 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override
     public void show(Schedule schedule) {
+        WeekViewEventConverter converter = new WeekViewEventConverter(getContext());
+        collapsingToolbarLayout.setTitle(schedule.getTitle());
+        collapsingToolbarLayout.setContentScrimColor(converter.getColorByScheduleType(schedule.getType()));
+        collapsingToolbarLayout.setStatusBarScrimColor(converter.getColorByScheduleType(schedule.getType()));
         toolbar.setTitle(schedule.getTitle());
         txtTransport.setText(schedule.getTransport());
         txtMoney.setText(String.valueOf(schedule.getMoney()));
         txtLocation.setText(schedule.getLocation());
         txtNote.setText(schedule.getNote());
+        Glide.with(this)
+                .load(schedule.getImageUrl())
+                .into(imageSchedule);
     }
 }
