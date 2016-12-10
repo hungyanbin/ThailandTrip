@@ -1,4 +1,4 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.framework;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 
+import com.yanin.thailandtrip.CalendarFragment;
+import com.yanin.thailandtrip.MainContract;
+import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.drawer.DrawerContract;
 import com.yanin.thailandtrip.drawer.DrawerPresenter;
 import com.yanin.thailandtrip.drawer.DrawerView;

@@ -1,9 +1,10 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.schedule;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 
 import com.alamkanak.weekview.WeekViewEvent;
+import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.db.Schedule;
 import com.yanin.thailandtrip.schedule.ScheduleConstants;
 
@@ -13,13 +14,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class WeekViewEventConverter {
+public class ScheduleUtil {
 
     private SimpleDateFormat dateFormat;
     private SimpleDateFormat shortDateFormat;
     private Context context;
 
-    public WeekViewEventConverter(Context context) {
+    public ScheduleUtil(Context context) {
         this.context = context;
         dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
         shortDateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());

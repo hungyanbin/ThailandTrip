@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,9 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yanin.thailandtrip.BaseFragment;
+import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.R;
-import com.yanin.thailandtrip.WeekViewEventConverter;
 import com.yanin.thailandtrip.db.Schedule;
 
 public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
@@ -94,7 +92,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override
     public void show(Schedule schedule) {
-        WeekViewEventConverter converter = new WeekViewEventConverter(getContext());
+        ScheduleUtil converter = new ScheduleUtil(getContext());
         collapsingToolbarLayout.setTitle(schedule.getTitle());
         collapsingToolbarLayout.setContentScrimColor(converter.getColorByScheduleType(schedule.getType()));
         collapsingToolbarLayout.setStatusBarScrimColor(converter.getColorByScheduleType(schedule.getType()));

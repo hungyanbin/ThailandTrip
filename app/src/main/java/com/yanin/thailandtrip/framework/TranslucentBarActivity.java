@@ -1,10 +1,12 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.framework;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 
+import com.yanin.thailandtrip.R;
+import com.yanin.thailandtrip.framework.BaseActivity;
 import com.yanin.thailandtrip.page.Page;
 import com.yanin.thailandtrip.page.PageNavigator;
 

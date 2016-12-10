@@ -1,7 +1,8 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.framework;
 
 import android.app.Application;
 
+import com.yanin.thailandtrip.ServiceFactory;
 import com.yanin.thailandtrip.db.DBService;
 
 public class TripApplication extends Application {

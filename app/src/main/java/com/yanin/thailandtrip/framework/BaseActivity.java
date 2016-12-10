@@ -1,4 +1,4 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.framework;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 

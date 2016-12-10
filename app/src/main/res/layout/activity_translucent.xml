@@ -4,5 +4,5 @@
     android:id="@+id/layoutContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yanin.thailandtrip.TranslucentBarActivity"/>
+    tools:context="com.yanin.thailandtrip.framework.TranslucentBarActivity"/>
 

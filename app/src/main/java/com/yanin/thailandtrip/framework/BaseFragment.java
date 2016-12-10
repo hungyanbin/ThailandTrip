@@ -1,4 +1,4 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.framework;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
+import com.yanin.thailandtrip.R;
+import com.yanin.thailandtrip.framework.BaseActivity;
 import com.yanin.thailandtrip.page.PageNavigator;
 
 public class BaseFragment extends RxFragment{
