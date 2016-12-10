@@ -15,6 +15,7 @@ import com.yanin.thailandtrip.drawer.DrawerContract;
 import com.yanin.thailandtrip.drawer.DrawerPresenter;
 import com.yanin.thailandtrip.drawer.DrawerView;
 import com.yanin.thailandtrip.page.Page;
+import com.yanin.thailandtrip.page.PageFactory;
 import com.yanin.thailandtrip.page.PageNavigator;
 
 public class MainActivity extends BaseActivity implements MainContract.View, PageNavigator {
@@ -34,16 +35,26 @@ public class MainActivity extends BaseActivity implements MainContract.View, Pag
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerView = new DrawerView(drawer, toolbar, this);
         drawerPresenter = new DrawerPresenter(drawerView, this);
+        drawerView.bindPresenter(drawerPresenter);
         fragmentManager = getSupportFragmentManager();
-        showPage();
+        showPage(new PageFactory.CalendarPage());
     }
 
-    public void showPage() {
-        Fragment newFragment = CalendarFragment.newInstance();
+    public void showPage(Page page) {
+        Fragment newFragment = page.getFragment();
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
         transaction.replace(R.id.layoutContainer, newFragment);
+        transaction.commit();
+    }
+
+    @Override
+    public void replaceCurrentPage(Page page) {
+        BaseFragment fragment = page.getFragment();
+        String tag = fragment.getClass().getSimpleName();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.layoutContainer, fragment, tag);
         transaction.commit();
     }
 

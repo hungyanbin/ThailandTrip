@@ -14,12 +14,17 @@ public class DrawerView implements DrawerContract.View{
     private DrawerLayout drawer;
     private Activity activity;
     private Toolbar toolbar;
+    private DrawerContract.Presenter presenter;
 
     public DrawerView(DrawerLayout drawer, Toolbar toolbar, Activity activity) {
         this.drawer = drawer;
         this.activity = activity;
         this.toolbar = toolbar;
         init();
+    }
+
+    public void bindPresenter(DrawerContract.Presenter presenter){
+        this.presenter = presenter;
     }
 
     private void init(){
@@ -35,14 +40,7 @@ public class DrawerView implements DrawerContract.View{
     private NavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener =
             item -> {
                 int id = item.getItemId();
-
-                if (id == R.id.nav_calendar) {
-
-                } else if (id == R.id.nav_gallery) {
-
-                } else if (id == R.id.nav_map) {
-
-                }
+                presenter.onMenuSelected(id);
 
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
