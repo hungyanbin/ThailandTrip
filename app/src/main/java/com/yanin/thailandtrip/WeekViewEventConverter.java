@@ -10,16 +10,19 @@ import com.yanin.thailandtrip.schedule.ScheduleConstants;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class WeekViewEventConverter {
 
     private SimpleDateFormat dateFormat;
+    private SimpleDateFormat shortDateFormat;
     private Context context;
 
     public WeekViewEventConverter(Context context) {
         this.context = context;
         dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+        shortDateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
     }
 
     public WeekViewEvent convert(Schedule schedule){
@@ -54,5 +57,16 @@ public class WeekViewEventConverter {
             colorRes = R.color.color_sleep;
         }
         return ContextCompat.getColor(context, colorRes);
+    }
+
+    public String convertToShowingTime(String startTime, String endTime){
+        try {
+            Date end = dateFormat.parse(endTime);
+            String shortenEndTime = shortDateFormat.format(end);
+
+            return startTime + " - " + shortenEndTime;
+        } catch (ParseException e) {
+            throw new IllegalArgumentException("unexpected format : " + endTime);
+        }
     }
 }

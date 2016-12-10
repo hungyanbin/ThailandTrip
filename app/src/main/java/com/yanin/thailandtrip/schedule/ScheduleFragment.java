@@ -28,6 +28,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     private TextView txtTransport;
     private TextView txtMoney;
     private TextView txtLocation;
+    private TextView txtTime;
     private TextView txtNote;
     private ImageView imageSchedule;
     private ScheduleContract.Presenter presenter;
@@ -71,6 +72,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         txtMoney = (TextView)findViewById(R.id.txtMoney);
         txtLocation = (TextView)findViewById(R.id.txtLocation);
         txtNote = (TextView)findViewById(R.id.txtNote);
+        txtTime = (TextView)findViewById(R.id.txtTime);
         imageSchedule = (ImageView)findViewById(R.id.imageSchedule);
     }
 
@@ -100,6 +102,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         txtTransport.setText(schedule.getTransport());
         txtMoney.setText(String.valueOf(schedule.getMoney()));
         txtLocation.setText(schedule.getLocation());
+        txtTime.setText(converter.convertToShowingTime(schedule.getStartTime(), schedule.getEndTime()));
         txtNote.setText(schedule.getNote());
         Glide.with(this)
                 .load(schedule.getImageUrl())

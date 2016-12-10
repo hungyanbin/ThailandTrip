@@ -13,5 +13,6 @@
     <string name="schedule_transport">交通方式</string>
     <string name="schedule_money">金額</string>
     <string name="schedule_location">地點</string>
+    <string name="schedule_time">時間</string>
     <string name="schedule_note">備註</string>
 </resources>
