@@ -1,5 +1,6 @@
 package com.yanin.thailandtrip.schedule;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.db.Schedule;
+import com.yanin.thailandtrip.framework.IntentUtil;
 
 public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
 
@@ -100,6 +102,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         txtTransport.setText(schedule.getTransport());
         txtMoney.setText(String.valueOf(schedule.getMoney()));
         txtLocation.setText(schedule.getLocation());
+        txtLocation.setOnClickListener(view -> IntentUtil.openGoogleMap(schedule, getContext()));
         txtTime.setText(converter.convertToShowingTime(schedule.getStartTime(), schedule.getEndTime()));
         txtNote.setText(schedule.getNote());
         Glide.with(this)

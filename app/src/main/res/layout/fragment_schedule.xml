@@ -175,6 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/schedule_note"
+                    android:autoLink="web"
                     android:textSize="@dimen/schedule_itemTextSize" />
             </LinearLayout>
         </LinearLayout>

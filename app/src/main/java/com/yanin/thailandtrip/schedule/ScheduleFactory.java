@@ -18,8 +18,8 @@ public class ScheduleFactory {
                 "2016-12-14 02:00", "2016-12-14 10:00", ScheduleConstants.TYPE_FLIGHT, "13.6900043", "100.7479237", "Suvarnbhmi Airport",
                 "辦網路、電話、換泰幣",
                 "https://c2.staticflickr.com/4/3192/2807870771_1253fc4bf4.jpg", 0));
-        schedules.add(new Schedule(null, "BKK Unique Check in", "搭捷運",
-                "2016-12-14 10:00", "2016-12-14 12:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7594886", "100.5579588", "BKK Unique",
+        schedules.add(new Schedule(null, "BKK Unique Check in", "搭BTS",
+                "2016-12-14 10:00", "2016-12-14 12:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7593552", "100.5684153", "BKK Unique",
                 "A) 蘇汪納蓬國際機場 (SUV)\n" +
                         ".... - 25分鐘抵達BKK Unique (跳表車資約250泰銖，另加機場排班費50泰銖)\n" +
                         ".... - 排班計程車在一樓外側\n" +
@@ -51,7 +51,10 @@ public class ScheduleFactory {
                 "2016-12-14 20:30", "2016-12-14 22:00", ScheduleConstants.TYPE_SHOPPING, "13.7376599", "100.5603949", "Terminal 21",
                 "",
                 "https://farm4.staticflickr.com/3837/15098388260_6a7b2db06d_o.jpg", 0));
-
+        schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
+                "2016-12-14 22:00", "2016-12-15 09:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
+                "",
+                "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/M_Id_401088_Kids_Sleep.jpg", 0));
         //day 2
         schedules.add(new Schedule(null, "Sompong Thai Cooking School", "搭BTS到 Chong Nongsi 站",
                 "2016-12-15 09:00", "2016-12-15 12:00", ScheduleConstants.TYPE_PAID, "13.7237232", "100.527326", "Chong Nongsi 站3號出口",
@@ -76,6 +79,11 @@ public class ScheduleFactory {
                 "航程時間：105分鐘-120分鐘。\n" +
                 "用餐方式：國際自助百匯。",
                 "http://www.akhousebkk.com/plugin/travel/files/1472281601.jpg", 875));
+        schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
+                "2016-12-15 22:00", "2016-12-16 08:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
+                "",
+                "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/M_Id_401088_Kids_Sleep.jpg", 0));
+
         //day 3
         schedules.add(new Schedule(null, "大城-世界文化遺產精選攻略一日遊", "搭BTS到 Chit Lom 站",
                 "2016-12-16 08:30", "2016-12-16 17:30", ScheduleConstants.TYPE_PAID, "13.7440943", "100.5408605", "AK Travel門市",
@@ -87,7 +95,24 @@ public class ScheduleFactory {
                 "2016-12-16 18:00", "2016-12-16 22:00", ScheduleConstants.TYPE_SHOPPING, "13.7045112", "100.5008093", "瑪頭夜市",
                 "營業時間：pm17-am24(接駁船時間:pm16:00-pm23:30)\"  ",
                 "https://pic.pimg.tw/rebecca1003/1456755707-3809411692_n.jpg?v=1456756489", 0));
+        schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
+                "2016-12-16 22:00", "2016-12-17 09:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
+                "",
+                "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/M_Id_401088_Kids_Sleep.jpg", 0));
 
+        //day 4
+        schedules.add(new Schedule(null, "洽圖洽市集", "搭BTS到 Mo chit站、chatuchak Part站",
+                "2016-12-17 09:00", "2016-12-17 17:00", ScheduleConstants.TYPE_SHOPPING, "13.7999793", "100.5487116", "洽圖洽市集（Chatuchak Market）",
+                "逛累了可以去旁邊的公園休息\n",
+                "http://wherethailand.com/wp-content/uploads/2013/09/DSC4876_opt.jpeg", 0));
+        schedules.add(new Schedule(null, "Bangkok Swing", "???",
+                "2016-12-17 18:00", "2016-12-17 22:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7999793", "100.5487116", "???",
+                "Just Dance!!",
+                "http://2.bp.blogspot.com/-GJsR50HKIAc/UTpfjgqCQOI/AAAAAAAAAI8/sWnhgtXLDN8/s1600/dancing.jpg", 0));
+        schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
+                "2016-12-17 22:00", "2016-12-18 09:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
+                "",
+                "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/M_Id_401088_Kids_Sleep.jpg", 0));
         //day 5
         schedules.add(new Schedule(null, "肥台灣去", "搭BTS到 Suvarnbhmi Airport站",
                 "2016-12-18 17:50", "2016-12-18 22:25", ScheduleConstants.TYPE_FLIGHT, "13.6900043", "100.7479237", "Suvarnbhmi Airport",
