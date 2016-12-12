@@ -2,6 +2,7 @@ package com.yanin.thailandtrip;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.yanin.thailandtrip.framework.BaseFragment;
+import com.yanin.thailandtrip.framework.MainActivity;
 import com.yanin.thailandtrip.page.PageFactory;
 import com.yanin.thailandtrip.schedule.ScheduleRepo;
 import com.yanin.thailandtrip.schedule.ScheduleUtil;
@@ -47,6 +49,9 @@ public class CalendarFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Toolbar toolbar = ((MainActivity) getActivity()).getToolbar();
+        setupMainToolbar(toolbar, R.string.calendar);
 
         setWeekView(view);
     }

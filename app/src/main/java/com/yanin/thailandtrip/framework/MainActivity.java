@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 
-import com.yanin.thailandtrip.CalendarFragment;
 import com.yanin.thailandtrip.MainContract;
 import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.drawer.DrawerContract;
@@ -23,13 +22,14 @@ public class MainActivity extends BaseActivity implements MainContract.View, Pag
     private DrawerContract.View drawerView;
     private DrawerContract.Presenter drawerPresenter;
     private FragmentManager fragmentManager;
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -40,7 +40,11 @@ public class MainActivity extends BaseActivity implements MainContract.View, Pag
         showPage(new PageFactory.CalendarPage());
     }
 
-    public void showPage(Page page) {
+    public Toolbar getToolbar(){
+        return toolbar;
+    }
+
+    private void showPage(Page page) {
         Fragment newFragment = page.getFragment();
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();

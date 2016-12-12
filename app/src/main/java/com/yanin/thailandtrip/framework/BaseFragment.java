@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
@@ -43,6 +44,10 @@ public class BaseFragment extends RxFragment{
     }
 
     protected void setupToolbar(Toolbar toolbar){
+        setupToolbar(toolbar, R.string.app_name);
+    }
+
+    protected void setupToolbar(Toolbar toolbar, @StringRes int title){
         @DrawableRes int homeIcon = R.drawable.ic_back_white;
         BaseActivity activity = (BaseActivity) getActivity();
         activity.setSupportActionBar(toolbar);
@@ -50,12 +55,17 @@ public class BaseFragment extends RxFragment{
         ActionBar actionBar = activity.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setTitle("");
+        actionBar.setTitle(getString(title));
 
         toolbar.setNavigationIcon(homeIcon);
         toolbar.setTag(homeIcon);
         toolbar.setTitleTextColor(ContextCompat.getColor(getContext(), R.color.white));
+    }
 
+
+    protected void setupMainToolbar(Toolbar toolbar, @StringRes int title){
+        toolbar.setTitle(getString(title));
+        toolbar.setTitleTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
 }
