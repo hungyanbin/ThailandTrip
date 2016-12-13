@@ -16,7 +16,8 @@ public class ScheduleFactory {
                 "https://c2.staticflickr.com/4/3192/2807870771_1253fc4bf4.jpg", 0));
         schedules.add(new Schedule(null, "機場睡覺 + 閒晃", "你已經在這裡了！！",
                 "2016-12-14 02:00", "2016-12-14 10:00", ScheduleConstants.TYPE_FLIGHT, "13.6900043", "100.7479237", "Suvarnbhmi Airport",
-                "辦網路、電話、換泰幣",
+                "辦網路、電話、換泰幣\n\n" +
+                "http://bangkokgoplay.pixnet.net/blog/post/63780412",
                 "https://c2.staticflickr.com/4/3192/2807870771_1253fc4bf4.jpg", 0));
         schedules.add(new Schedule(null, "BKK Unique Check in", "搭BTS",
                 "2016-12-14 10:00", "2016-12-14 12:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7593552", "100.5684153", "BKK Unique",
@@ -60,7 +61,8 @@ public class ScheduleFactory {
                 "2016-12-15 09:00", "2016-12-15 12:00", ScheduleConstants.TYPE_PAID, "13.7237232", "100.527326", "Chong Nongsi",
                 "集合地點：曼谷 BTS Chong Nongsi 站3號出口\n" +
                         "集合時間：9:15am\n" +
-                        "行程長度：約 4 小時",
+                        "行程長度：約 4 小時\n\n" +
+                        "https://www.kkday.com/zh-tw/product/9789",
                 "https://img.kkday.com/image/get/s1.kkday.com/product_9789/20160908030239_cM4Ue/jpeg", 910));
         schedules.add(new Schedule(null, "昭披耶河古蹟半日遊", "搭BTS到 Saphan Taksin 站，2號出口旁的中央碼頭搭船",
                 "2016-12-15 13:00", "2016-12-15 18:30", ScheduleConstants.TYPE_SITE_SEEING, "13.7251224", "100.4789887", "Central Pier/Sathorn (Taksin) Yan Nawa Bangkok Thailand",
@@ -77,7 +79,8 @@ public class ScheduleFactory {
                 "航班：19:45。（請選「第一場」。）\n" +
                 "報到時間：19:00-19:30。\n" +
                 "航程時間：105分鐘-120分鐘。\n" +
-                "用餐方式：國際自助百匯。",
+                "用餐方式：國際自助百匯。\n\n" +
+                "http://www.akhousebkk.com/font/ticket_item.php?ticket_id=14",
                 "http://www.akhousebkk.com/plugin/travel/files/1472281601.jpg", 875));
         schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
                 "2016-12-15 22:00", "2016-12-16 08:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
@@ -89,11 +92,13 @@ public class ScheduleFactory {
                 "2016-12-16 08:30", "2016-12-16 17:30", ScheduleConstants.TYPE_PAID, "13.7440943", "100.5408605", "AK Travel門市",
                 "出發時間 ：09:00am\n" +
                         "集合地點 ：AK Travel門市（BTS -Chit Lom）\n" +
-                "閱讀曾經的輝煌．大城-世界文化遺產精選攻略一日遊（崖差蒙空寺Wat Yai Chaimongkhon +大城水上市場ayutthaya floatingmarket+涅槃寺Wat Lokaya Sutha+瑪哈泰寺Wat Mahathat+帕席桑碧寺＆帕蒙空博碧大皇宮Wat Phra Si Sanphet",
+                "閱讀曾經的輝煌．大城-世界文化遺產精選攻略一日遊（崖差蒙空寺Wat Yai Chaimongkhon +大城水上市場ayutthaya floatingmarket+涅槃寺Wat Lokaya Sutha+瑪哈泰寺Wat Mahathat+帕席桑碧寺＆帕蒙空博碧大皇宮Wat Phra Si Sanphet\n\n"
+                + "http://www.akhousebkk.com/font/route_item.php?route_id=28",
                 "http://www.akhousebkk.com/plugin/travel/files/1472238107.jpg", 1122));
         schedules.add(new Schedule(null, "河濱夜市", "Saphan Taksin站2號出口轉乘免費接駁船",
                 "2016-12-16 18:00", "2016-12-16 22:00", ScheduleConstants.TYPE_SHOPPING, "13.7045112", "100.5008093", "Asiatique",
-                "營業時間：pm17-am24(接駁船時間:pm16:00-pm23:30)\"  ",
+                "營業時間：pm17-am24(接駁船時間:pm16:00-pm23:30)\n\n" +
+                "http://wkitty.pixnet.net/blog/post/33254353",
                 "https://pic.pimg.tw/rebecca1003/1456755707-3809411692_n.jpg?v=1456756489", 0));
         schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
                 "2016-12-16 22:00", "2016-12-17 09:00", ScheduleConstants.TYPE_SLEEP, "13.7593552", "100.5684153", "BKK Unique",
