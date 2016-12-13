@@ -43,6 +43,7 @@ class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.ViewHolder> {
         String imageUrl = imageUrls.get(position);
 
         holder.itemView.setTag(imageUrl);
+        holder.itemView.setOnClickListener(onImageClickListener);
 
         Glide.with(context)
                 .load(imageUrl)

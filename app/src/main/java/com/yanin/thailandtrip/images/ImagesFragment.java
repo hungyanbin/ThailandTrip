@@ -14,6 +14,7 @@ import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.framework.GridItemDecoration;
 import com.yanin.thailandtrip.framework.MainActivity;
 import com.yanin.thailandtrip.framework.WrapGridLayoutManager;
+import com.yanin.thailandtrip.page.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +55,7 @@ public class ImagesFragment extends BaseFragment {
     private void setupRecycleView() {
         imagesAdapter = new ImagesAdapter(getContext());
         imagesAdapter.setOnItemClickListener((url, view) -> {
-
+            pageNavigator.openPage(new PageFactory.FullImagePage(url));
         });
         layoutManager = new WrapGridLayoutManager(getContext(), 2);
         recycleImages.setAdapter(imagesAdapter);
@@ -70,9 +71,9 @@ public class ImagesFragment extends BaseFragment {
     public void onStart() {
         super.onStart();
         List<String> urls = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            urls.add("https://pic.pimg.tw/rebecca1003/1456755707-3809411692_n.jpg?v=1456756489");
-        }
+        urls.add("https://cloud.githubusercontent.com/assets/7949400/21091549/e61835ce-c081-11e6-9d54-db94c3fafd9a.gif");
+        urls.add("https://cloud.githubusercontent.com/assets/7949400/21091592/2271e826-c082-11e6-8b03-da3fa50bb5e3.png");
+        urls.add("https://cloud.githubusercontent.com/assets/7949400/21125998/8680f10c-c124-11e6-8cd8-e7b73f4255a5.jpg");
         imagesAdapter.setUsers(urls);
     }
 }

@@ -57,13 +57,13 @@ public class ScheduleFactory {
                 "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/M_Id_401088_Kids_Sleep.jpg", 0));
         //day 2
         schedules.add(new Schedule(null, "Sompong Thai Cooking School", "搭BTS到 Chong Nongsi 站",
-                "2016-12-15 09:00", "2016-12-15 12:00", ScheduleConstants.TYPE_PAID, "13.7237232", "100.527326", "Chong Nongsi 站3號出口",
+                "2016-12-15 09:00", "2016-12-15 12:00", ScheduleConstants.TYPE_PAID, "13.7237232", "100.527326", "Chong Nongsi",
                 "集合地點：曼谷 BTS Chong Nongsi 站3號出口\n" +
                         "集合時間：9:15am\n" +
                         "行程長度：約 4 小時",
                 "https://img.kkday.com/image/get/s1.kkday.com/product_9789/20160908030239_cM4Ue/jpeg", 910));
         schedules.add(new Schedule(null, "昭披耶河古蹟半日遊", "搭BTS到 Saphan Taksin 站，2號出口旁的中央碼頭搭船",
-                "2016-12-15 13:00", "2016-12-15 18:30", ScheduleConstants.TYPE_SITE_SEEING, "13.7251224", "100.4789887", "Sathorn Pier",
+                "2016-12-15 13:00", "2016-12-15 18:30", ScheduleConstants.TYPE_SITE_SEEING, "13.7251224", "100.4789887", "Central Pier/Sathorn (Taksin) Yan Nawa Bangkok Thailand",
                 "N8 : \n" +
                         "鄭王廟：在港口對岸，需再搭小船前往\n" +
                         "臥佛寺\n" +
@@ -72,7 +72,7 @@ public class ScheduleFactory {
                         "玉佛寺",
                 "http://userimage3.360doc.com/13/0222/10/8047853_201302221018140053.jpg", 0));
         schedules.add(new Schedule(null, "經濟入門夜遊選 - 昭披耶公主號", "搭船到Marine Department(N4)",
-                "2016-12-15 19:00", "2016-12-15 22:00", ScheduleConstants.TYPE_PAID, "13.7307015","100.5111443", "Marine Department 1號碼頭",
+                "2016-12-15 19:00", "2016-12-15 22:00", ScheduleConstants.TYPE_PAID, "13.7307015","100.5111443", "Marine Department",
                 "上船地點：曼谷、River City 1號碼頭。\n" +
                 "航班：19:45。（請選「第一場」。）\n" +
                 "報到時間：19:00-19:30。\n" +
@@ -91,8 +91,8 @@ public class ScheduleFactory {
                         "集合地點 ：AK Travel門市（BTS -Chit Lom）\n" +
                 "閱讀曾經的輝煌．大城-世界文化遺產精選攻略一日遊（崖差蒙空寺Wat Yai Chaimongkhon +大城水上市場ayutthaya floatingmarket+涅槃寺Wat Lokaya Sutha+瑪哈泰寺Wat Mahathat+帕席桑碧寺＆帕蒙空博碧大皇宮Wat Phra Si Sanphet",
                 "http://www.akhousebkk.com/plugin/travel/files/1472238107.jpg", 1122));
-        schedules.add(new Schedule(null, "瑪頭夜市", "Saphan Taksin站2號出口轉乘免費接駁船",
-                "2016-12-16 18:00", "2016-12-16 22:00", ScheduleConstants.TYPE_SHOPPING, "13.7045112", "100.5008093", "瑪頭夜市",
+        schedules.add(new Schedule(null, "河濱夜市", "Saphan Taksin站2號出口轉乘免費接駁船",
+                "2016-12-16 18:00", "2016-12-16 22:00", ScheduleConstants.TYPE_SHOPPING, "13.7045112", "100.5008093", "Asiatique",
                 "營業時間：pm17-am24(接駁船時間:pm16:00-pm23:30)\"  ",
                 "https://pic.pimg.tw/rebecca1003/1456755707-3809411692_n.jpg?v=1456756489", 0));
         schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
@@ -102,11 +102,11 @@ public class ScheduleFactory {
 
         //day 4
         schedules.add(new Schedule(null, "洽圖洽市集", "搭BTS到 Mo chit站、chatuchak Part站",
-                "2016-12-17 09:00", "2016-12-17 17:00", ScheduleConstants.TYPE_SHOPPING, "13.7999793", "100.5487116", "洽圖洽市集（Chatuchak Market）",
+                "2016-12-17 09:00", "2016-12-17 17:00", ScheduleConstants.TYPE_SHOPPING, "13.7999793", "100.5487116", "Chatuchak Market",
                 "逛累了可以去旁邊的公園休息\n",
                 "http://wherethailand.com/wp-content/uploads/2013/09/DSC4876_opt.jpeg", 0));
-        schedules.add(new Schedule(null, "Bangkok Swing", "???",
-                "2016-12-17 18:00", "2016-12-17 22:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7999793", "100.5487116", "???",
+        schedules.add(new Schedule(null, "Bangkok Swing", "搭BTS到 Chong Nonsi站，再搭Taxi",
+                "2016-12-17 18:00", "2016-12-17 22:00", ScheduleConstants.TYPE_SITE_SEEING, "13.7254936", "100.5194244", "The Hop Bangkok",
                 "Just Dance!!",
                 "http://2.bp.blogspot.com/-GJsR50HKIAc/UTpfjgqCQOI/AAAAAAAAAI8/sWnhgtXLDN8/s1600/dancing.jpg", 0));
         schedules.add(new Schedule(null, "睡覺 打東東", "搭BTS",
