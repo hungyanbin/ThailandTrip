@@ -1,15 +1,13 @@
 package com.yanin.thailandtrip.schedule;
 
-import com.yanin.thailandtrip.RepoFactory;
-
 public class SchedulePresenter implements ScheduleContract.Presenter{
 
     private ScheduleContract.View view;
     private ScheduleRepo scheduleRepo;
 
-    public SchedulePresenter(ScheduleContract.View view) {
+    public SchedulePresenter(ScheduleContract.View view, ScheduleRepo scheduleRepo) {
         this.view = view;
-        scheduleRepo = RepoFactory.getScheduleRepo();
+        this.scheduleRepo = scheduleRepo;
     }
 
     @Override

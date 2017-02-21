@@ -1,14 +1,22 @@
-package com.yanin.thailandtrip.db;
+package com.yanin.thailandtrip;
 
 import android.content.Context;
 
-public class DBServiceImp implements DBService {
+import com.yanin.thailandtrip.db.DaoMaster;
+import com.yanin.thailandtrip.db.DaoSession;
+import com.yanin.thailandtrip.db.ScheduleDao;
+
+
+import dagger.Module;
+import dagger.Provides;
+
+@Module
+public class DBModule {
 
     private static final String DB_NAME = "trip.db";
     private DaoSession daoSession;
 
-    @Override
-    public void init(Context context) {
+    public DBModule(Context context) {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(context, DB_NAME);
 
         DaoMaster daoMaster = new DaoMaster(helper.getWritableDatabase());
@@ -16,7 +24,7 @@ public class DBServiceImp implements DBService {
         daoSession = daoMaster.newSession();
     }
 
-    @Override
+    @Provides
     public ScheduleDao getScheduleDao() {
         return daoSession.getScheduleDao();
     }

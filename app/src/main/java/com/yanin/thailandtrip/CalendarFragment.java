@@ -19,6 +19,8 @@ import com.yanin.thailandtrip.schedule.ScheduleUtil;
 import java.util.Collections;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 
 public class CalendarFragment extends BaseFragment {
@@ -28,6 +30,7 @@ public class CalendarFragment extends BaseFragment {
     private static final String TAG = "CalendarFragment";
     private static final int TRIP_YEAR = 2016;
     private static final int TRIP_MONTH = 12;
+    @Inject ScheduleRepo scheduleRepo;
 
     public static CalendarFragment newInstance() {
 
@@ -44,6 +47,11 @@ public class CalendarFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_calendar, container, false);
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GlobalProvider.repoComponent.inject(this);
+    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -75,7 +83,6 @@ public class CalendarFragment extends BaseFragment {
     }
 
     private void loadSchedules(){
-        ScheduleRepo scheduleRepo = RepoFactory.getScheduleRepo();
         ScheduleUtil converter = new ScheduleUtil(getContext());
         scheduleRepo.loadAll()
                 .toObservable()

@@ -1,6 +1,5 @@
 package com.yanin.thailandtrip.schedule;
 
-import com.yanin.thailandtrip.ServiceFactory;
 import com.yanin.thailandtrip.db.Schedule;
 import com.yanin.thailandtrip.db.ScheduleDao;
 
@@ -12,8 +11,8 @@ public class ScheduleRepoImp implements ScheduleRepo{
 
     private ScheduleDao scheduleDao;
 
-    public ScheduleRepoImp() {
-        scheduleDao = ServiceFactory.getDBService().getScheduleDao();
+    public ScheduleRepoImp(ScheduleDao scheduleDao) {
+        this.scheduleDao = scheduleDao;
     }
 
     @Override

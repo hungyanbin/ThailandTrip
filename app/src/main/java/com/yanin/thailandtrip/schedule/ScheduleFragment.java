@@ -13,10 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.yanin.thailandtrip.GlobalProvider;
 import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.db.Schedule;
 import com.yanin.thailandtrip.framework.IntentUtil;
+
+import javax.inject.Inject;
 
 public class ScheduleFragment extends BaseFragment implements ScheduleContract.View{
 
@@ -32,6 +35,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     private TextView txtNote;
     private ImageView imageSchedule;
     private ScheduleContract.Presenter presenter;
+    @Inject ScheduleRepo scheduleRepo;
 
     public static ScheduleFragment newInstance(long scheduleId) {
 
@@ -48,6 +52,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         super.onCreate(savedInstanceState);
         Bundle bundle = getArguments();
         scheduleId = bundle.getLong(ARG_SCHEDULE_ID);
+        GlobalProvider.repoComponent.inject(this);
     }
 
     @Nullable
@@ -62,7 +67,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
         findView();
         setupToolbar(toolbar);
-        presenter = new SchedulePresenter(this);
+        presenter = new SchedulePresenter(this, scheduleRepo);
     }
 
     private void findView() {
