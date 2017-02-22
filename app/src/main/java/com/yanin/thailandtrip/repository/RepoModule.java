@@ -7,10 +7,10 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-@Singleton
 @Module
 public class RepoModule {
 
+    @Singleton
     @Provides
     ScheduleRepo provideScheduleRepo(ScheduleDao scheduleDao){
         return new ScheduleRepoImp(scheduleDao);

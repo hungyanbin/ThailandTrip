@@ -17,7 +17,6 @@ import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.db.Schedule;
 import com.yanin.thailandtrip.framework.IntentUtil;
-import com.yanin.thailandtrip.repository.ScheduleRepo;
 
 import javax.inject.Inject;
 
@@ -34,9 +33,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     private TextView txtTime;
     private TextView txtNote;
     private ImageView imageSchedule;
-    private ScheduleContract.Presenter presenter;
-    @Inject
-    ScheduleRepo scheduleRepo;
+    @Inject ScheduleContract.Presenter presenter;
 
     public static ScheduleFragment newInstance(long scheduleId) {
 
@@ -53,7 +50,6 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         super.onCreate(savedInstanceState);
         Bundle bundle = getArguments();
         scheduleId = bundle.getLong(ARG_SCHEDULE_ID);
-        GlobalProvider.repoComponent.inject(this);
     }
 
     @Nullable
@@ -68,7 +64,11 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
         findView();
         setupToolbar(toolbar);
-        presenter = new SchedulePresenter(this, scheduleRepo);
+        DaggerScheduleComponent.builder()
+                .repoComponent(GlobalProvider.provideRepoComponent())
+                .scheduleModule(new ScheduleModule(this))
+                .build()
+                .inject(this);
     }
 
     private void findView() {

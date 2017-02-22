@@ -50,7 +50,7 @@ public class CalendarFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        GlobalProvider.repoComponent.inject(this);
+        GlobalProvider.provideRepoComponent().inject(this);
     }
 
     @Override

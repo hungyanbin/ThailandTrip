@@ -10,8 +10,8 @@ import com.yanin.thailandtrip.repository.RepoComponent;
 
 public class GlobalProvider {
 
-    public static DBComponent dbComponent;
-    public static RepoComponent repoComponent;
+    private static DBComponent dbComponent;
+    private static RepoComponent repoComponent;
 
     public static void init(Context context){
         dbComponent = DaggerDBComponent
@@ -22,6 +22,14 @@ public class GlobalProvider {
                 .builder()
                 .dBComponent(dbComponent)
                 .build();
+    }
+
+    public static DBComponent provideDBComponent(){
+        return dbComponent;
+    }
+
+    public static RepoComponent provideRepoComponent(){
+        return repoComponent;
     }
 
 }
