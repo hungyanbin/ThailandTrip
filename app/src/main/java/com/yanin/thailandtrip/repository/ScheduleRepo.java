@@ -1,4 +1,4 @@
-package com.yanin.thailandtrip.schedule;
+package com.yanin.thailandtrip.repository;
 
 import com.yanin.thailandtrip.db.Schedule;
 

@@ -1,6 +1,5 @@
 package com.yanin.thailandtrip.schedule;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -18,6 +17,7 @@ import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.R;
 import com.yanin.thailandtrip.db.Schedule;
 import com.yanin.thailandtrip.framework.IntentUtil;
+import com.yanin.thailandtrip.repository.ScheduleRepo;
 
 import javax.inject.Inject;
 
@@ -35,7 +35,8 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     private TextView txtNote;
     private ImageView imageSchedule;
     private ScheduleContract.Presenter presenter;
-    @Inject ScheduleRepo scheduleRepo;
+    @Inject
+    ScheduleRepo scheduleRepo;
 
     public static ScheduleFragment newInstance(long scheduleId) {
 

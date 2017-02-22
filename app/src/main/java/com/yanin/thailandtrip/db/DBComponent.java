@@ -1,6 +1,4 @@
-package com.yanin.thailandtrip;
-
-import com.yanin.thailandtrip.db.ScheduleDao;
+package com.yanin.thailandtrip.db;
 
 import dagger.Component;
 

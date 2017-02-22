@@ -1,11 +1,6 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.db;
 
 import android.content.Context;
-
-import com.yanin.thailandtrip.db.DaoMaster;
-import com.yanin.thailandtrip.db.DaoSession;
-import com.yanin.thailandtrip.db.ScheduleDao;
-
 
 import dagger.Module;
 import dagger.Provides;

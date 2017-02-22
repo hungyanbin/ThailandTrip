@@ -1,8 +1,6 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.repository;
 
 import com.yanin.thailandtrip.db.ScheduleDao;
-import com.yanin.thailandtrip.schedule.ScheduleRepo;
-import com.yanin.thailandtrip.schedule.ScheduleRepoImp;
 
 import javax.inject.Singleton;
 

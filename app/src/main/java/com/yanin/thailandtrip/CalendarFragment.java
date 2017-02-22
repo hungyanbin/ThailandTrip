@@ -13,7 +13,7 @@ import com.alamkanak.weekview.WeekViewEvent;
 import com.yanin.thailandtrip.framework.BaseFragment;
 import com.yanin.thailandtrip.framework.MainActivity;
 import com.yanin.thailandtrip.page.PageFactory;
-import com.yanin.thailandtrip.schedule.ScheduleRepo;
+import com.yanin.thailandtrip.repository.ScheduleRepo;
 import com.yanin.thailandtrip.schedule.ScheduleUtil;
 
 import java.util.Collections;

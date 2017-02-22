@@ -1,5 +1,7 @@
-package com.yanin.thailandtrip;
+package com.yanin.thailandtrip.repository;
 
+import com.yanin.thailandtrip.CalendarFragment;
+import com.yanin.thailandtrip.db.DBComponent;
 import com.yanin.thailandtrip.schedule.ScheduleFragment;
 
 import javax.inject.Singleton;
